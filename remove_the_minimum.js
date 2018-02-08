@@ -11,13 +11,25 @@
 
 
 // CODE
-// REFACTORED CODE
+
+// SECOND REFACTOR
 function removeSmallest(numbers) {
-  var arr = numbers;
-  var ind = arr.indexOf(Math.min(...numbers));
-  var ret = arr.filter((num, i) => i != ind);
-  return ret; 
+  return numbers.filter( (num, i) => i != numbers.indexOf(Math.min(...numbers)) );
 }
+
+// DRIVER CODE
+removeSmallest([1,2,3,4,5])   // [2,3,4,5]
+removeSmallest([5,3,2,1,4])   // [5,3,2,4]
+removeSmallest([2,2,1,2,1])   // [2,2,2,1]
+
+
+// REFACTORED CODE
+// function removeSmallest(numbers) {
+//   var arr = numbers;
+//   var ind = arr.indexOf(Math.min(...numbers));
+//   var ret = arr.filter((num, i) => i != ind);
+//   return ret; 
+// }
 
 
 // ORIGINAL / FIRST PASS WORKING
@@ -36,8 +48,3 @@ function removeSmallest(numbers) {
 //   return ret; 
 // }
 
-
-// DRIVER CODE
-removeSmallest([1,2,3,4,5])   // [2,3,4,5]
-removeSmallest([5,3,2,1,4])   // [5,3,2,4]
-removeSmallest([2,2,1,2,1])   // [2,2,2,1]
